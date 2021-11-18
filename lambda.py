@@ -17,7 +17,7 @@ def lambda_handler(event, context):
     output = (response['Events'])
     userName = (output[0]['Username'])
     eventTime = (output[0]['EventTime'])
-    EventName = (output[0]['EventName'])
+    eventName = (output[0]['EventName'])
     resources = (output[0]['Resources'])
     instanceId = (resources[0]['ResourceName'])
 
@@ -30,7 +30,7 @@ def lambda_handler(event, context):
     my_file = open("ec2.txt","w+")
     my_file.write("Action done by" + ":" + check(userName) + "\n")
     my_file.write("eventTime" + ":" +  check(eventTime) +'\n')
-    my_file.write("State" + ":" +  check(EventName) +'\n')
+    my_file.write("State" + ":" +  check(eventName) +'\n')
     my_file.write("instanceId" + ":" +  check(instanceId) +'\n') 
 
     s3 = boto3.resource('s3')
