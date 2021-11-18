@@ -9,7 +9,7 @@ def lambda_handler(event, context):
         LookupAttributes=[
             {
                 'AttributeKey': 'EventName',
-                'AttributeValue': 'StartInstance'
+                'AttributeValue': 'StartInstances'
             },
         ],
         MaxResults=1,
